@@ -1,0 +1,17 @@
+{
+  "name": "airdraw",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Qo'l ishoralari bilan havoda chizish (TypeScript + MediaPipe)",
+  "scripts": {
+    "prepare-assets": "node scripts/prepare.mjs",
+    "dev": "npm run prepare-assets && vite --host",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run prepare-assets && tsc --noEmit && vite build",
+    "preview": "vite preview --host"
+  },
+  "dependencies": { "@mediapipe/tasks-vision": "0.10.14" },
+  "devDependencies": { "typescript": "^5.5.4", "vite": "^5.4.8" },
+  "engines": { "node": ">=18" }
+}

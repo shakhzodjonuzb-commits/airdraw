@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>AirDraw — havoda chizing</title>
+  <meta name="description" content="Kamera oldida qo'lingiz bilan chizing, suring, kattalashtiring va o'chiring." />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <video id="cam" playsinline muted></video>
+  <canvas id="fx"></canvas>
+
+  <div id="hud">
+    <div id="status">Qo'lingizni kameraga ko'rsating</div>
+    <div id="legend">
+      <span>👆 chizish</span><span>✊ surish</span><span>🤏 kattalashtirish</span><span>✋ o‘chirish</span>
+    </div>
+  </div>
+
+  <nav id="bar" aria-label="Asboblar">
+    <div id="colors"></div>
+    <input id="size" type="range" min="2" max="24" value="6" aria-label="Qalam qalinligi" />
+    <button id="undo" title="Ortga">↩︎</button>
+    <button id="clear" title="Tozalash">🗑</button>
+    <button id="save" title="Rasmni saqlash">⬇</button>
+  </nav>
+
+  <section id="start">
+    <div class="card">
+      <h1>AirDraw</h1>
+      <p>Kamera oldida qo‘lingiz bilan chizing. Ishoralar:</p>
+      <ul>
+        <li><b>👆</b> ko‘rsatkich barmoq — chizish</li>
+        <li><b>✊</b> musht — chizmani surish</li>
+        <li><b>🤏</b> chimchilash — kattalashtirish / kichraytirish (qo‘lni yaqinlashtiring yoki ikki qo‘l bilan)</li>
+        <li><b>✋</b> ochiq kaft — qo‘l turgan joydan o‘chirish</li>
+      </ul>
+      <button id="go">Kamerani yoqish</button>
+      <small id="msg">Video hech qayerga yuborilmaydi — hammasi brauzeringizda ishlaydi.</small>
+    </div>
+  </section>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
